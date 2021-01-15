@@ -12,7 +12,7 @@ jobs:
 
     strategy:
       matrix:
-        php: [7.3.25, 7.4.13]
+        php: [7.3.25, 7.4.13, 8.0.1]
 
     steps:
       - uses: actions/checkout@v2 #needed for build.sh
@@ -34,7 +34,7 @@ jobs:
 
     strategy:
       matrix:
-        php: [7.3.25, 7.4.13]
+        php: [7.3.25, 7.4.13, 8.0.1]
 
     steps:
       - uses: actions/checkout@v2
@@ -78,7 +78,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        php: [7.3.25, 7.4.13]
+        php: [7.3.25, 7.4.13, 8.0.1]
 
     steps:
       - uses: actions/checkout@v2
