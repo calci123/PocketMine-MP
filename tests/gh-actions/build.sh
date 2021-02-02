@@ -22,3 +22,4 @@ cd php-build
 ./install-dependencies.sh
 echo '"pthreads",,"https://github.com/pmmp/pthreads.git",,,"extension",' >> share/php-build/extension/definition
 PHP_BUILD_INSTALL_EXTENSION='pthreads=@bc16ee7b5a21faee9bd1743f830f7135b763fb56 yaml=2.2.0' PHP_BUILD_ZTS_ENABLE=on ./bin/php-build "$VERSION" "$INSTALL_DIR"
+rm "$INSTALL_DIR/etc/conf.d/xdebug.ini" || true
