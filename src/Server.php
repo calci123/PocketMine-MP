@@ -419,6 +419,13 @@ class Server{
 	public function getPluginManager(){
 		return $this->pluginManager;
 	}
+	
+	/**
+	 * Returns the underlying server-scoped API map
+	 */
+	public function getApiMap() : ApiMap{
+		return $this->apiMap;
+	}
 
 	/**
 	 * Provides an API implementation of $interface.
