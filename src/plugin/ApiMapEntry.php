@@ -24,7 +24,7 @@ declare(strict_types=1);
 namespace pocketmine\plugin;
 
 /**
- * @internal This is an internal, semver-exempt class.
+ * @internal
  */
 final class ApiMapEntry{
 	/** @var Plugin|null */

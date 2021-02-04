@@ -444,7 +444,7 @@ class Server{
 	 * The default implementation (usually provided by the module declaring the interface)
 	 * should call `provideDefaultApi` so that other plugins can override it without triggering errors.
 	 *
-	 * @template T of object
+	 * @phpstan-template T of object
 	 * @phpstan-param class-string<T> $interface
 	 * @phpstan-param T $impl
 	 *
@@ -462,7 +462,7 @@ class Server{
 	 *
 	 * `provideDefaultApi` must only be called exactly once, by the module that declared `$interface`.
 	 *
-	 * @template T of object
+	 * @phpstan-template T of object
 	 * @phpstan-param class-string<T> $interface
 	 * @phpstan-param T $impl
 	 *
@@ -481,11 +481,9 @@ class Server{
 	 *
 	 * @phpstan-template T of object
 	 * @phpstan-param class-string<T> $interface
-	 * @param bool $default
-	 * @return object|null
 	 * @phpstan-return T|null
 	 */
-	public function getApi(string $interface, bool &$default = false) : ?object {
+	public function getApi(string $interface, bool &$default = false) : ?object{
 		return $this->apiMap->getApi($interface, $default);
 	}
 

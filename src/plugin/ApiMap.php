@@ -41,15 +41,11 @@ final class ApiMap{
 	private $apiMap = [];
 
 	/**
-	 * @see Server#provideApi
+	 * @see Server::provideApi()
 	 *
-	 * @template T of object
-	 * @param string $interface
+	 * @phpstan-template T of object
 	 * @phpstan-param class-string<T> $interface
-	 * @param Plugin|null $plugin
-	 * @param object $impl
 	 * @phpstan-param T $impl
-	 * @param bool $default
 	 *
 	 * @throws InvalidArgumentException if $impl is not an instance of $interface
 	 * @throws RuntimeException if two non-default APIs are provided for the same interface
@@ -89,13 +85,11 @@ final class ApiMap{
 	}
 
 	/**
-	 * @see Server#getApi
+	 * @see Server::getApi()
 	 *
-	 * @template T of object
-	 * @param string $interface
+	 * @phpstan-template T of object
 	 * @phpstan-param class-string<T> $interface
-	 * @param bool $default
-	 * @return object|null
+	 *
 	 * @phpstan-return T|null
 	 */
 	public function getApi(string $interface, bool &$default = false) : ?object {
@@ -103,9 +97,8 @@ final class ApiMap{
 			return null;
 		}
 		$default = $this->apiMap[$interface]->default;
-		/** @var T $impl */
+		/** @phpstan-var T $impl */
 		$impl = $this->apiMap[$interface]->impl;
 		return $impl;
 	}
 }
-
